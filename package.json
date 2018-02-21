@@ -12,6 +12,7 @@
     }
   },
   "scripts": {
+    "start": "node  ./bin/www",
     "test": "jest --watchAll"
   },
   "dependencies": {

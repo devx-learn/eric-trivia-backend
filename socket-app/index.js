@@ -1,6 +1,6 @@
 
-let fs = require('fs');
-let path = require('path');
+let fs = require('fs'); //research
+let path = require('path'); //reaserch
 let io = require('socket.io');
 
 class socketApp {
@@ -11,11 +11,9 @@ class socketApp {
         if (files) {
             files.forEach((file) => {
                 try {
-                    let connection = require(path.join(__dirname, connectionDir, file));
                     let connectionName = path.basename(file,'.js');
-                    let socketServer = this.io.of('/' + connectionName);
-                    socketServer.on('connection', connection.onConnect.bind(socketServer));
-                    console.log("Loaded socket connection '" + connectionName + "'")
+                    let SocketApp = require(path.join(__dirname, connectionDir, file));
+                    new SocketApp(this.io, connectionName);
                 }
                 catch (ex) {
                     console.log("Unable to load socket connection " + file + '\n' + ex.stack);
