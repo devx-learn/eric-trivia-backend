@@ -1,7 +1,7 @@
 const SocketApp = require('../../socket-app');
 const ANSWER_TIME = 30000; // 30 Seconds
 const request = require('request');
-const START_TIME = 15000;
+const START_TIME = 5000;
 const MAX_PLAYERS = 10
 /**
  * Shuffles array in place.

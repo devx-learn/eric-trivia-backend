@@ -43,12 +43,12 @@ module.exports = function(sequelize, DataTypes) {
         instanceMethods:{
             toJSON(){
                 return {
-                    id: this.get('id'),
-                    firstName: this.get('firstName'),
-                    lastName: this.get('lastName'),
-                    email: this.get('email'),
-                    authToken: this.get('authToken'),
-                    authTokenExpiration: this.get('authTokenExpiration')
+                  id: this.get('id'),
+                  firstName: this.get('firstName'),
+                  lastName: this.get('lastName'),
+                  email: this.get('email'),
+                  authToken: this.get('authToken'),
+                  authTokenExpiration: this.get('authTokenExpiration')
                 }
             },
 
@@ -83,6 +83,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-    
+
     return User;
 };
